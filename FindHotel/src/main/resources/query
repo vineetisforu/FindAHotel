@@ -1,0 +1,3 @@
+test.findthem
+mysql
+select h.place_id, avg(h.nightly_price) avg, pc.place_category from toydb.Hotel h inner join toydb.Place p on  h.place_id=p.place_id inner join toydb.PlaceType pt on p.place_type_id=pt.place_type_id inner join toydb.PlaceGroup pg on pt.place_group_id=pg.place_group_id inner join toydb.PlaceCategory pc on pg.place_category_id=pc.place_category_id group by h.place_id having pc.place_category in ('City')
